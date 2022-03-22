@@ -1,0 +1,231 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=8524, tid=1164
+#
+# JRE version:  (17.0.1+12) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.1+12-39, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\lib\idea_rt.jar=62046:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-base\17-ea+11\javafx-base-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-graphics\17-ea+11\javafx-graphics-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\controlsfx\controlsfx\11.1.0\controlsfx-11.1.0.jar;C:\Users\Zsófi\.m2\repository\org\kordamp\ikonli\ikonli-core\12.2.0\ikonli-core-12.2.0.jar;C:\Users\Zsófi\.m2\repository\net\synedra\validatorfx\0.1.13\validatorfx-0.1.13.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-fxml\17-ea+11\javafx-fxml-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\kordamp\ikonli\ikonli-javafx\12.2.0\ikonli-javafx-12.2.0.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-controls\17-ea+11\javafx-controls-17-ea+11-win.jar;C:\Users\Zsófi\IdeaProjects\csomagkuldo\target\classes -Djdk.module.main=com.example.gui_basic com.example.gui_basic/com.example.gui_basic.GUI_basic
+
+Host: Intel(R) Core(TM) i5-3360M CPU @ 2.80GHz, 4 cores, 7G,  Windows 7 , 64 bit Build 7601 (6.1.7601.24545)
+Time: Wed Dec  1 16:48:17 2021 Közép-európai téli idõ  elapsed time: 0.015285 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000000117790):  JavaThread "Unknown thread" [_thread_in_vm, id=1164, stack(0x0000000002110000,0x0000000002210000)]
+
+Stack: [0x0000000002110000,0x0000000002210000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x66fa1a]
+V  [jvm.dll+0x7ce5a4]
+V  [jvm.dll+0x7cfd4e]
+V  [jvm.dll+0x7d03b3]
+V  [jvm.dll+0x242b05]
+V  [jvm.dll+0x66ca39]
+V  [jvm.dll+0x661502]
+V  [jvm.dll+0x30081b]
+V  [jvm.dll+0x307da6]
+V  [jvm.dll+0x357a1e]
+V  [jvm.dll+0x357c4f]
+V  [jvm.dll+0x2d7ad8]
+V  [jvm.dll+0x2d8a44]
+V  [jvm.dll+0x7a01e1]
+V  [jvm.dll+0x365791]
+V  [jvm.dll+0x77f6cc]
+V  [jvm.dll+0x3e812f]
+V  [jvm.dll+0x3e9bd1]
+C  [jli.dll+0x527b]
+C  [ucrtbase.DLL+0x1d912]
+C  [kernel32.dll+0x1556d]
+C  [ntdll.dll+0x5372d]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000007fed74e7818, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000000000015a020 GCTaskThread "GC Thread#0" [stack: 0x000000001e070000,0x000000001e170000] [id=8976]
+  0x000000000016ca30 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001e290000,0x000000001e390000] [id=7968]
+  0x000000000016df10 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001e3b0000,0x000000001e4b0000] [id=1904]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fed6d384b7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000000110480] Heap_lock - owner thread: 0x0000000000117790
+
+Heap address: 0x0000000082200000, size: 2014 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000082200000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fed7118d89]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.012 Loaded shared library C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x000000013f9f0000 - 0x000000013f9fe000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\java.exe
+0x00000000777a0000 - 0x000000007793f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077580000 - 0x000000007769f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd3c0000 - 0x000007fefd427000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fef4de0000 - 0x000007fef4df8000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\jli.dll
+0x000007fefc310000 - 0x000007fefc505000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
+0x000007fefeaa0000 - 0x000007fefeb3f000 	C:\Windows\system32\msvcrt.dll
+0x000007feff5c0000 - 0x000007feff627000 	C:\Windows\system32\GDI32.dll
+0x00000000776a0000 - 0x000000007779b000 	C:\Windows\system32\USER32.dll
+0x000007feff650000 - 0x000007feff65e000 	C:\Windows\system32\LPK.dll
+0x000007feff7c0000 - 0x000007feff88b000 	C:\Windows\system32\USP10.dll
+0x000007feff540000 - 0x000007feff5b1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fed78c0000 - 0x000007fed78da000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\VCRUNTIME140.dll
+0x000007fed78b0000 - 0x000007fed78b4000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x000007fed77b0000 - 0x000007fed78aa000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\ucrtbase.DLL
+0x000007fed77a0000 - 0x000007fed77a3000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-localization-l1-2-0.dll
+0x000007fed7790000 - 0x000007fed7793000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-processthreads-l1-1-1.dll
+0x000007fed7780000 - 0x000007fed7783000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-file-l1-2-0.dll
+0x000007fed7770000 - 0x000007fed7773000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-timezone-l1-1-0.dll
+0x000007fed7760000 - 0x000007fed7763000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-file-l2-1-0.dll
+0x000007fed7750000 - 0x000007fed7753000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-core-synch-l1-2-0.dll
+0x000007fed7740000 - 0x000007fed7743000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x000007fed7730000 - 0x000007fed7734000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-string-l1-1-0.dll
+0x000007fed7720000 - 0x000007fed7724000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x000007fed7710000 - 0x000007fed7714000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x000007fed7700000 - 0x000007fed7703000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x000007fed76f0000 - 0x000007fed76f3000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x000007fed76e0000 - 0x000007fed76e5000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-math-l1-1-0.dll
+0x000007fed76d0000 - 0x000007fed76d3000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x000007fefd6b0000 - 0x000007fefd6de000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe930000 - 0x000007fefea3b000 	C:\Windows\system32\MSCTF.dll
+0x000007fed76c0000 - 0x000007fed76cc000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\vcruntime140_1.dll
+0x000007fed7630000 - 0x000007fed76bd000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\msvcp140.dll
+0x000007fed7620000 - 0x000007fed7623000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-time-l1-1-0.dll
+0x000007fed7610000 - 0x000007fed7613000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x000007fed6a50000 - 0x000007fed760e000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\server\jvm.dll
+0x000007feff6e0000 - 0x000007feff7bb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefebe0000 - 0x000007fefebff000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feff410000 - 0x000007feff53c000 	C:\Windows\system32\RPCRT4.dll
+0x000007fef6a00000 - 0x000007fef6a09000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefea50000 - 0x000007fefea9d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefea40000 - 0x000007fefea48000 	C:\Windows\system32\NSI.dll
+0x000007fefb770000 - 0x000007fefb7ab000 	C:\Windows\system32\WINMM.dll
+0x000007fefc070000 - 0x000007fefc07c000 	C:\Windows\system32\VERSION.dll
+0x0000000077950000 - 0x0000000077957000 	C:\Windows\system32\PSAPI.DLL
+0x000007fed6a40000 - 0x000007fed6a4a000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\jimage.dll
+0x000007feec780000 - 0x000007feec8a5000 	C:\Windows\system32\DBGHELP.DLL
+0x000007fecdba0000 - 0x000007fecdbae000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\instrument.dll
+0x000007fed6a10000 - 0x000007fed6a35000 	C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845;C:\Users\Zsófi\.jdks\openjdk-17.0.1\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\lib\idea_rt.jar=62046:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin -Dfile.encoding=UTF-8 --module-path=C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-base\17-ea+11\javafx-base-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-graphics\17-ea+11\javafx-graphics-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\controlsfx\controlsfx\11.1.0\controlsfx-11.1.0.jar;C:\Users\Zsófi\.m2\repository\org\kordamp\ikonli\ikonli-core\12.2.0\ikonli-core-12.2.0.jar;C:\Users\Zsófi\.m2\repository\net\synedra\validatorfx\0.1.13\validatorfx-0.1.13.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-fxml\17-ea+11\javafx-fxml-17-ea+11-win.jar;C:\Users\Zsófi\.m2\repository\org\kordamp\ikonli\ikonli-javafx\12.2.0\ikonli-javafx-12.2.0.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-controls\17-ea+11\javafx-controls-17-ea+11-win.jar;C:\Users\Zsófi\IdeaProjects\csomagkuldo\target\classes -Djdk.module.main=com.example.gui_basic 
+java_command: com.example.gui_basic/com.example.gui_basic.GUI_basic
+java_class_path (initial): C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-controls\17-ea+11\javafx-controls-17-ea+11.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-graphics\17-ea+11\javafx-graphics-17-ea+11.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-base\17-ea+11\javafx-base-17-ea+11.jar;C:\Users\Zsófi\.m2\repository\org\openjfx\javafx-fxml\17-ea+11\javafx-fxml-17-ea+11.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2111832064                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2111832064                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\
+USERNAME=Zsófi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 7 , 64 bit Build 7601 (6.1.7601.24545)
+OS uptime: 0 days 0:02 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x0, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, aes, erms, clmul, vzeroupper, clflush
+
+Memory: 4k page, system-wide physical 8055M (2160M free)
+TotalPageFile size 10101M (AvailPageFile size 17M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 58M, peak: 182M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.1+12-39) for windows-amd64 JRE (17.0.1+12-39), built on Sep 27 2021 18:39:29 by "mach5one" with MS VC++ 16.8 (VS2019)
+
+END.
